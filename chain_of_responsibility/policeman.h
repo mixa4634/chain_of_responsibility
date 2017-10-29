@@ -28,7 +28,7 @@ public:
 				current_policeman->investigate(ca);
 				return;
 			}
-		
+		throw std::logic_error("No investigator fit");
 	}
 };
 
