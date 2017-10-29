@@ -11,7 +11,7 @@ private:
 	int deduction;
 	policeman *next_policeman;
 
-	void investigate()
+	void investigate(criminal_action *ca)
 	{
 		//...
 	}
@@ -22,13 +22,13 @@ public:
 	{}
 	void handle_request(criminal_action *ca)
 	{
-		if (ca->check(deduction) == true)
-			investigate();
-		else
-			if (next_policeman != nullptr)
-				next_policeman->handle_request(ca);
-			else
-				throw std::logic_error("No investigator fit");
+		for(policeman *current_policeman = this; current_policeman != nullptr; current_policeman = current_policeman->next_policeman)
+			if (ca->check(current_policeman->deduction) == true)
+			{
+				current_policeman->investigate(ca);
+				return;
+			}
+		
 	}
 };
 
