@@ -11,7 +11,7 @@ private:
 	int deduction;
 	policeman *next_policeman;
 
-	void investigate()
+	void investigate(criminal_action *ca)
 	{
 		//...
 	}
