@@ -23,7 +23,7 @@ public:
 	void handle_request(criminal_action *ca)
 	{
 		if (ca->check(deduction) == true)
-			investigate();
+			investigate(ca);
 		else
 			if (next_policeman != nullptr)
 				next_policeman->handle_request(ca);
