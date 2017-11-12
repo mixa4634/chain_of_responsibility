@@ -8,12 +8,12 @@ int main(void)
 
 	criminal_action 
 		r1("Кража кошелька", 1), 
-		r2("Óáèéñòâî", 8),
-		r3("Îãðàáëåíèå áàíêà", 15);
+		r2("Убийство", 8),
+		r3("Ограбление банка", 15);
 
-	worker.handle_request(&r1); //Áóäåò ðàññëåäîâàíî worker
-	worker.handle_request(&r2); //Áóäåò ðàññëåäîâàíî chief
-	worker.handle_request(&r3); //Áóäåò âûáðîøåíî èñêëþ÷åíèå logic_error
+	worker.handle_request(&r1); //Будет расследовано worker
+	worker.handle_request(&r2); //Будет расследовано chief
+	worker.handle_request(&r3); //Будет выброшено исключение logic_error
 
 	return 0;
 }
