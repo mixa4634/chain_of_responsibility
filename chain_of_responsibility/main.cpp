@@ -7,13 +7,13 @@ int main(void)
 	policeman worker(1, &chief);
 
 	criminal_action 
-		r1("Кража кошелька", 1), 
-		r2("Убийство", 8),
-		r3("Ограбление банка", 15);
+		r1("РљСЂР°Р¶Р° РєРѕС€РµР»СЊРєР°", 1), 
+		r2("Г“ГЎГЁГ©Г±ГІГўГ®", 8),
+		r3("ГЋГЈГ°Г ГЎГ«ГҐГ­ГЁГҐ ГЎГ Г­ГЄГ ", 15);
 
-	worker.handle_request(&r1); //Будет расследовано worker
-	worker.handle_request(&r2); //Будет расследовано chief
-	worker.handle_request(&r3); //Будет выброшено исключение logic_error
+	worker.handle_request(&r1); //ГЃГіГ¤ГҐГІ Г°Г Г±Г±Г«ГҐГ¤Г®ГўГ Г­Г® worker
+	worker.handle_request(&r2); //ГЃГіГ¤ГҐГІ Г°Г Г±Г±Г«ГҐГ¤Г®ГўГ Г­Г® chief
+	worker.handle_request(&r3); //ГЃГіГ¤ГҐГІ ГўГ»ГЎГ°Г®ГёГҐГ­Г® ГЁГ±ГЄГ«ГѕГ·ГҐГ­ГЁГҐ logic_error
 
 	return 0;
 }
